@@ -140,8 +140,15 @@ Let’s connect and create something impactful together.
           <h2 className={styles.colHeading}>Send a Message</h2>
           <p className={styles.colSub}>Fill in the form and I'll get back to you within 24 hours.</p>
 
-          <form name="contact" method="POST"  className={styles.form} onSubmit={handleSubmit} noValidate data-netlify="true" data-netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="contact" />
+        <form
+          name="contact"
+          method="POST"
+          action="/"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={handleSubmit}
+        >            
+        <input type="hidden" name="form-name" value="contact" />
             <p hidden>
               <label>
                 Don’t fill this: <input name="bot-field" />
