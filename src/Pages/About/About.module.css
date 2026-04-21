@@ -1,0 +1,345 @@
+:root {
+  --about-width: 80%;
+  --about-img-size: 320px;
+  --card-bg: rgba(184, 32, 230, 0.06);
+  --card-border: rgba(184, 32, 230, 0.25);
+  --timeline-line: rgba(184, 32, 230, 0.25);
+  --dot-color: #b820e6;
+  --dot-glow: rgba(184, 32, 230, 0.5);
+}
+
+/* ── Section ── */
+.about {
+  width: var(--about-width);
+  margin: 4% auto;
+  padding-top: 110px;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+
+/* ════════════════════════════
+   INTRO — 2 partition layout
+════════════════════════════ */
+
+
+.intro {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* ── Left: image column ── */
+.imageCol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Unique image style:
+   - diamond/rotated square clip
+   - layered neon rings
+   - floating badge
+*/
+.imgFrame {
+  position: relative;
+  width: var(--about-img-size);
+  height: var(--about-img-size);
+}
+
+/* main photo — clipped to rotated square (diamond) */
+.imgPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  transition: clip-path 0.5s ease;
+}
+
+.imgFrame:hover .imgPhoto {
+  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+}
+
+/* outer rotating neon ring */
+.imgGlowRing {
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
+    linear-gradient(135deg, #b820e6, #da7d20, #b820e6) border-box;
+  animation: spinRing 6s linear infinite;
+}
+
+/* second ring — counter-rotate, dashed */
+.imgGlowRing2 {
+  position: absolute;
+  inset: -26px;
+  border-radius: 50%;
+  border: 1px dashed rgba(218, 125, 32, 0.35);
+  animation: spinRing 10s linear infinite reverse;
+}
+
+@keyframes spinRing {
+  to { transform: rotate(360deg); }
+}
+
+/* floating badge bottom-right */
+.imgBadge {
+  position: absolute;
+  bottom: -10px;
+  right: -18px;
+  background: linear-gradient(to right, #b820e6, #da7d20);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  box-shadow: 0 0 12px rgba(184, 32, 230, 0.5);
+  white-space: nowrap;
+}
+
+/* ── Right: text column ── */
+.textCol {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.subLabel {
+  font-size: 0.82rem;
+  color: var(--mini-hover);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.headline {
+  font-family: var(--heading-font);
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  color: var(--text-white);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.roleSlide {
+  display: inline-block;
+  background: var(--btn-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  min-width: 240px;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.fadeIn  { opacity: 1; transform: translateY(0); }
+.fadeOut { opacity: 0; transform: translateY(-10px); }
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bio p {
+  font-size: 0.97rem;
+  color: var(--text-color);
+  line-height: 1.85;
+  opacity: 0.88;
+}
+
+/* ════════════════════════════
+   CARDS
+════════════════════════════ */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 4% 0;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 0 18px rgba(184, 32, 230, 0.25);
+  transform: translateY(-4px);
+}
+
+.cardIcon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(184, 32, 230, 0.08);
+  border: 1px solid rgba(184, 32, 230, 0.2);
+  color: var(--mini-hover);
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.card:hover .cardIcon {
+  box-shadow: 0 0 12px rgba(184, 32, 230, 0.35);
+  transform: scale(1.08);
+}
+.cardTitle { font-size: 1rem; font-weight: 700; color: var(--mini-hover); }
+.cardDesc  { font-size: 0.88rem; color: var(--text-color); line-height: 1.7; opacity: 0.82; }
+
+/* ════════════════════════════
+   TIMELINE
+════════════════════════════ */
+.timeline {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin: 4% 0;
+}
+
+.colHeading {
+  font-family: var(--heading-font);
+  font-size: 1.3rem;
+  color: var(--text-white);
+  font-weight: 700;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.colIcon{
+  margin-left: 20px;
+  transition: transform .2s;
+}
+
+
+.timeline:hover .colIcon{
+  color: var(--mini-hover);
+  transform: scale(1.3);
+}
+.timelineCol {
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid var(--timeline-line);
+}
+
+.timelineItem {
+  position: relative;
+  padding: 0 0 28px 28px;
+  display: flex;
+}
+
+.dot {
+  position: absolute;
+  left: -7px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--dot-color);
+  box-shadow: 0 0 8px var(--dot-glow);
+}
+
+.timelineContent { display: flex; flex-direction: column; gap: 4px; }
+.timelineContent h4 { font-size: 1rem; font-weight: 700; color: var(--text-white); }
+.duration { font-size: 0.8rem; color: var(--mini-hover); font-weight: 600; letter-spacing: 0.5px; display: flex;justify-content: space-between;}
+.duration span{font-weight: 600;font-size: 1em;}
+.timelineContent p { font-size: 0.88rem; color: var(--text-color); line-height: 1.7; opacity: 0.8; margin-top: 4px; }
+
+.timeperiod{
+  text-align: right;
+}
+/* ════════════════════════════
+   CTA
+════════════════════════════ */
+.actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  padding: 12px 32px;
+  border-radius: 8px;
+  background: var(--btn-color);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow: 0 0 14px rgba(184, 32, 230, 0.4);
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.btnPrimary:hover {
+  box-shadow: 0 0 26px rgba(184, 32, 230, 0.65), 0 0 40px rgba(218, 125, 32, 0.3);
+  transform: translateY(-2px);
+}
+
+.btnOutline {
+  padding: 12px 32px;
+  border-radius: 8px;
+  border: 1px solid rgba(184, 32, 230, 0.5);
+  color: var(--mini-hover);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  background: transparent;
+  transition: box-shadow 0.3s, background 0.3s, transform 0.2s;
+}
+
+.btnOutline:hover {
+  background: rgba(184, 32, 230, 0.08);
+  box-shadow: 0 0 14px rgba(184, 32, 230, 0.35);
+  transform: translateY(-2px);
+}
+
+/* ════════════════════════════
+   RESPONSIVE
+════════════════════════════ */
+@media (max-width: 900px) {
+  .intro {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .imageCol {
+    justify-content: center;
+  }
+
+  .roleSlide {
+    min-width: unset;
+  }
+
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  :root { --about-img-size: 220px; }
+
+  .about { width: 90%; }
+
+  .cards { grid-template-columns: 1fr; }
+
+  .headline { font-size: 1.4rem; }
+}

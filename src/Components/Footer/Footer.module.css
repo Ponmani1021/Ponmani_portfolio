@@ -1,0 +1,237 @@
+:root {
+  --footer-bg: rgba(17, 0, 31, 0.95);
+  --footer-border: rgba(184, 32, 230, 0.2);
+  --footer-glow: rgba(184, 32, 230, 0.15);
+}
+
+.footer {
+  width: 100%;
+  background: var(--footer-bg);
+  border-top: 1px solid var(--footer-border);
+  box-shadow: 0 -4px 30px var(--footer-glow);
+  margin-top: 60px;
+}
+
+/* ── 3-col inner ── */
+.inner {
+  width: 80%;
+  margin: 0 auto;
+  padding: 52px 0 36px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ── Col 1: Brand ── */
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.brandTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brandLogo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px rgba(184, 32, 230, 0.5));
+}
+
+.brandName {
+  font-family: var(--heading-font);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-white);
+  text-shadow: 0 0 12px rgba(184, 32, 230, 0.4);
+}
+
+.brandTagline {
+  font-size: 0.82rem;
+  color: var(--text-color);
+  opacity: 0.6;
+  line-height: 1.65;
+  max-width: 240px;
+}
+
+.cvBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 4px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  background: var(--btn-color);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  width: fit-content;
+  box-shadow: 0 0 10px rgba(184, 32, 230, 0.35);
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.cvBtn:hover {
+  box-shadow: 0 0 20px rgba(184, 32, 230, 0.6), 0 0 32px rgba(218, 125, 32, 0.25);
+  transform: translateY(-2px);
+}
+
+/* ── Col heading ── */
+.colTitle {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--mini-hover);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+/* ── Col 2: Quick Links ── */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navLink {
+  font-size: 0.88rem;
+  color: var(--text-color);
+  opacity: 0.72;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: var(--text-font);
+  text-align: left;
+  width: fit-content;
+  position: relative;
+  transition: color 0.25s, opacity 0.25s;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(to right, #b820e6, #da7d20);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--mini-hover);
+  opacity: 1;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+/* ── Col 3: Socials ── */
+.socialCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.socialLink {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(184, 32, 230, 0.07);
+  border: 1px solid rgba(184, 32, 230, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  opacity: 0.7;
+  transition: color 0.25s, opacity 0.25s, box-shadow 0.25s, transform 0.2s, border-color 0.25s;
+}
+
+.socialLink:hover {
+  opacity: 1;
+  color: var(--mini-hover);
+  border-color: rgba(184, 32, 230, 0.5);
+  box-shadow: 0 0 12px rgba(184, 32, 230, 0.35);
+  transform: translateY(-3px);
+}
+
+.wa:hover {
+  color: #25d366;
+  border-color: rgba(37, 211, 102, 0.4);
+  box-shadow: 0 0 12px rgba(37, 211, 102, 0.3);
+}
+
+.ig:hover {
+  color: #e1306c;
+  border-color: rgba(225, 48, 108, 0.4);
+  box-shadow: 0 0 12px rgba(225, 48, 108, 0.3);
+}
+
+/* ── Bottom bar ── */
+.bottom {
+  width: 80%;
+  margin: 0 auto;
+  padding: 16px 0;
+  border-top: 1px solid var(--footer-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--text-color);
+  opacity: 0.5;
+}
+
+.credit {
+  background: linear-gradient(to right, #b820e6, #da7d20);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+  opacity: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .inner {
+    grid-template-columns: 1fr;
+    width: 90%;
+    gap: 32px;
+  }
+
+  .bottom {
+    width: 90%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+  }
+}

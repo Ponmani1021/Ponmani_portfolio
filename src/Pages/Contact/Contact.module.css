@@ -1,0 +1,375 @@
+:root {
+  --contact-width: 80%;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(184, 32, 230, 0.2);
+  --glass-blur: blur(16px);
+  --input-bg: rgba(184, 32, 230, 0.05);
+  --input-border: rgba(184, 32, 230, 0.2);
+  --input-focus-border: rgba(184, 32, 230, 0.7);
+  --input-focus-glow: rgba(184, 32, 230, 0.2);
+  --info-icon-bg: rgba(184, 32, 230, 0.1);
+  --info-icon-border: rgba(184, 32, 230, 0.25);
+}
+
+/* ── Page ── */
+.contact {
+  width: var(--contact-width);
+  margin: 0 auto;
+  padding-top: 110px;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
+}
+
+/* ── Title ── */
+.pageTitle {
+  text-align: center;
+}
+
+.pageTitle h1 {
+  font-family: var(--heading-font);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--text-white);
+  text-shadow: 0 0 24px rgba(184, 32, 230, 0.3);
+}
+
+.availability {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--mini-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0.9;
+}
+
+.availability i {
+  color: #25d366;
+}
+
+/* ── 2-col grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* ── Shared card base (glassmorphism) ── */
+.infoCard,
+.formCard {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 36px 32px;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow:
+    0 0 20px rgba(184, 32, 230, 0.08),
+    0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s;
+}
+
+.infoCard:hover,
+.formCard:hover {
+  box-shadow:
+    0 0 30px rgba(184, 32, 230, 0.14),
+    0 8px 40px rgba(0, 0, 0, 0.35);
+}
+
+.colHeading {
+  font-family: var(--heading-font);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 8px;
+}
+
+.colSub {
+  font-size: 0.88rem;
+  color: var(--text-color);
+  opacity: 0.65;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+/* ── Info list ── */
+.infoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: transform 0.2s;
+}
+
+.infoItem:hover {
+  transform: translateX(4px);
+}
+
+.infoIconWrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--info-icon-bg);
+  border: 1px solid var(--info-icon-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: box-shadow 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.infoItem:hover .infoIconWrap {
+  box-shadow: 0 0 12px rgba(184, 32, 230, 0.4);
+}
+
+.infoIconWrap i {
+  font-size: 1rem;
+  background: var(--btn-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.infoText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.infoLabel {
+  font-size: 0.72rem;
+  color: var(--text-color);
+  opacity: 0.5;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 600;
+}
+
+.infoValue {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+a.infoValue:hover {
+  color: var(--mini-hover);
+}
+
+/* ── CTA block ── */
+.cta {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(184, 32, 230, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cta p {
+  font-size: 0.88rem;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 8px;
+  background: linear-gradient(to right, #25d366, #128c7e);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  width: fit-content;
+  box-shadow: 0 0 12px rgba(37, 211, 102, 0.3);
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.ctaBtn:hover {
+  box-shadow: 0 0 22px rgba(37, 211, 102, 0.5);
+  transform: translateY(-2px);
+}
+
+/* ── Form ── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.field label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-color);
+  opacity: 0.75;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.field label i {
+  font-size: 0.78rem;
+  background: var(--btn-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.input,
+.textarea {
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  font-family: var(--text-font);
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+  resize: none;
+  width: 100%;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--text-color);
+  opacity: 0.35;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 0 3px var(--input-focus-glow);
+  background: rgba(184, 32, 230, 0.08);
+}
+
+/* ── Submit button ── */
+.submitBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 32px;
+  border-radius: 10px;
+  background: var(--btn-color);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 16px rgba(184, 32, 230, 0.4);
+  transition: box-shadow 0.3s, transform 0.2s;
+  margin-top: 4px;
+}
+
+.submitBtn:hover {
+  box-shadow: 0 0 28px rgba(184, 32, 230, 0.65), 0 0 44px rgba(218, 125, 32, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ── Social section (below grid) ── */
+.socialSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 32px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+}
+
+/* ── Social row below form ── */
+.socialRow {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 0;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  background: var(--input-bg);
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: border-color 0.3s, box-shadow 0.3s, color 0.3s, transform 0.2s;
+}
+
+.socialLink i {
+  font-size: 1rem;
+  background: var(--btn-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.socialLink:hover {
+  border-color: rgba(184, 32, 230, 0.55);
+  box-shadow: 0 0 12px rgba(184, 32, 230, 0.25);
+  color: var(--mini-hover);
+  transform: translateY(-2px);
+}
+
+/* ── Availability line ── */
+.availLine {
+  font-size: 0.8rem;
+  color: var(--text-color);
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.availLine i {
+  color: #25d366;
+  opacity: 1;
+}
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact {
+    width: 90%;
+  }
+
+  .infoCard,
+  .formCard {
+    padding: 26px 20px;
+  }
+}

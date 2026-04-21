@@ -1,0 +1,210 @@
+:root {
+  --svc-width: 80%;
+  --card-bg: rgba(184, 32, 230, 0.05);
+  --card-border: rgba(184, 32, 230, 0.2);
+  --card-hover-border: rgba(184, 32, 230, 0.55);
+  --card-hover-glow: rgba(184, 32, 230, 0.2);
+  --featured-bg: rgba(184, 32, 230, 0.1);
+  --featured-border: rgba(184, 32, 230, 0.5);
+}
+
+/* ── Page ── */
+.services {
+  width: var(--svc-width);
+  margin: 0 auto;
+  padding-top: 110px;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+}
+
+/* ── Title ── */
+.pageTitle {
+  text-align: center;
+}
+
+.pageTitle h1 {
+  font-family: var(--heading-font);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--text-white);
+  text-shadow: 0 0 24px rgba(184, 32, 230, 0.3);
+}
+
+.pageTitle p {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  opacity: 0.65;
+}
+
+/* ── Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+/* ── Card ── */
+.card {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 32px 26px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.25s;
+}
+
+.card:hover {
+  border-color: var(--card-hover-border);
+  box-shadow: 0 0 22px var(--card-hover-glow), 0 8px 32px rgba(0,0,0,0.3);
+  transform: translateY(-6px);
+}
+
+/* Featured card */
+.featured {
+  background: var(--featured-bg);
+  border-color: var(--featured-border);
+  box-shadow: 0 0 18px rgba(184, 32, 230, 0.15);
+}
+
+.featuredBadge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to right, #b820e6, #da7d20);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+  box-shadow: 0 0 10px rgba(184, 32, 230, 0.45);
+}
+
+/* ── Icon ── */
+.iconWrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: rgba(184, 32, 230, 0.1);
+  border: 1px solid rgba(184, 32, 230, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.3s;
+}
+
+.card:hover .iconWrap {
+  box-shadow: 0 0 14px rgba(184, 32, 230, 0.4);
+}
+
+.icon {
+  font-size: 1.4rem;
+  background: var(--btn-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Text ── */
+.cardTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+.cardDesc {
+  font-size: 0.88rem;
+  color: var(--text-color);
+  line-height: 1.75;
+  opacity: 0.82;
+}
+
+/* ── Points ── */
+.points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.points li {
+  font-size: 0.82rem;
+  color: var(--mini-hover);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bullet {
+  color: #b820e6;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* ── CTA ── */
+.actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  padding: 12px 32px;
+  border-radius: 8px;
+  background: var(--btn-color);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow: 0 0 14px rgba(184, 32, 230, 0.4);
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.btnPrimary:hover {
+  box-shadow: 0 0 26px rgba(184, 32, 230, 0.65), 0 0 40px rgba(218, 125, 32, 0.3);
+  transform: translateY(-2px);
+}
+
+.btnOutline {
+  padding: 12px 32px;
+  border-radius: 8px;
+  border: 1px solid rgba(184, 32, 230, 0.5);
+  color: var(--mini-hover);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  background: transparent;
+  transition: box-shadow 0.3s, background 0.3s, transform 0.2s;
+}
+
+.btnOutline:hover {
+  background: rgba(184, 32, 230, 0.08);
+  box-shadow: 0 0 14px rgba(184, 32, 230, 0.35);
+  transform: translateY(-2px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .services { width: 90%; }
+  .grid { grid-template-columns: 1fr; }
+}
