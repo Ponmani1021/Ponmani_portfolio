@@ -205,6 +205,7 @@ Let’s connect and create something impactful together.
             
           </form>
           <form name="contact" method="POST" data-netlify="true" hidden>
+          <input type="hidden" name="form-name" value="contact" />
             <input type="text" name="name" />
             <input type="email" name="email" />
             <textarea name="message"></textarea>
