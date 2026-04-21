@@ -75,14 +75,6 @@ const handleSubmit = (e) => {
   return (
     <section className={styles.contact}>
 
-      {/* ── Success banner ── */}
-      {sent && (
-        <div className={styles.successBanner}>
-          <i className="fa-solid fa-circle-check" />
-          Message sent successfully!! Will connect you within 24hours
-        </div>
-      )}
-
       {/* ── Page title ── */}
       <div ref={titleRef} className={`${styles.pageTitle} reveal`}>
         <h1>Get In Touch</h1>
@@ -216,6 +208,12 @@ Let’s connect and create something impactful together.
                 : <><i className="fa-solid fa-paper-plane" /> Connect with Me</>
               }
             </button>
+
+            {sent && (
+              <p className={styles.successMsg}>
+                <i className="fa-solid fa-circle-check" /> Message sent successfully!! Will connect you within 24hours
+              </p>
+            )}
 
             
           </form>
