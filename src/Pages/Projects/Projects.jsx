@@ -8,6 +8,7 @@ import p4  from '../../assets/images/gelato.png';
 import p5  from '../../assets/images/medinova.png';
 import p6  from '../../assets/images/extensions.png';
 import p7  from '../../assets/images/ticket.png';
+import p12 from '../../assets/images/StudyMate.png'
 // fullstack
 import p8  from '../../assets/images/institute.png';
 import p9  from '../../assets/images/mushroom.png';
@@ -23,6 +24,14 @@ const frontend = [
     stack: ['HTML5', 'CSS3', 'JavaScript','React js'],
     live: 'https://ponmani1021.github.io/Amora_Salon/',
     github: 'https://github.com/Ponmani1021/Amora_Salon',
+  },
+   {
+    img: p12,
+    title: 'StudyMate – Student Study Planner',
+    desc: 'Implemented subject management, study scheduling, task tracking, study timers, and progress analytics using React Router and Local Storage.',
+    stack: ['HTML5', 'CSS3', 'JavaScript','React js'],
+    live: 'https://ponmani1021.github.io/StudyMate/',
+    github: 'https://github.com/Ponmani1021/StudyMate',
   },
   {
     img: p2,

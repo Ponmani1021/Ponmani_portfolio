@@ -13,6 +13,11 @@ const categories = [
       { name: 'Bootstrap',      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg',  desc: 'Rapid responsive UI framework' },
       { name: 'Tailwind CSS',   logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg', desc: 'Utility-first CSS framework' },
       { name: 'React.js',       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',          desc: 'Component-based UI library' },
+      { 
+        name: 'Redux',
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg',
+        desc: 'State management library'
+      },
     ],
   },
   {
@@ -23,6 +28,16 @@ const categories = [
       { name: 'Python',  logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',  desc: 'Versatile high-level programming language' },
       { name: 'Django',  logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg',     desc: 'Full-featured Python web framework' },
       { name: 'Flask',   logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg',   desc: 'Lightweight Python microframework' },
+        { 
+        name: 'Express.js',
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg',
+        desc: 'Fast, minimalist web framework'
+      },
+      { 
+        name: 'Node.js',
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',
+        desc: 'JavaScript runtime environment'
+      },
     ],
   },
   {
