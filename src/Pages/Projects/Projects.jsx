@@ -14,6 +14,7 @@ import p8  from '../../assets/images/institute.png';
 import p9  from '../../assets/images/mushroom.png';
 import p10 from '../../assets/images/boutique.png';
 import p11 from '../../assets/images/carwash.png';
+import p13 from "../../assets/images/careerpathAI.png";
 
 
 const frontend = [
@@ -86,6 +87,14 @@ const frontend = [
 ];
 
 const fullstack = [
+  {
+  img: p13,
+  title: 'CareerPath AI – Career Readiness & Skill Gap Analysis',
+  desc: 'Developed a Django-based career guidance system that analyzes resumes, identifies matched and missing skills, calculates career readiness scores, and provides personalized learning recommendations with downloadable PDF reports.',
+  stack: ['HTML5', 'CSS3', 'Bootstrap', 'Python', 'Django', 'MySQL'],
+  github: 'https://github.com/Ponmani1021/CareerPath_AI',
+  badge: 'Django + MySQL',
+},
   {
     img: p8,
     title: 'Computer Institute Portal',
